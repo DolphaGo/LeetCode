@@ -10,10 +10,10 @@
  */
 class Solution {
     fun preorderTraversal(root: TreeNode?): List<Int> {
-            val result = ArrayList<Int>()
-            go(root, result)
-            return result
-        }
+        val result = ArrayList<Int>()
+        go(root, result)
+        return result
+    }
 
     fun go(node: TreeNode?, result: ArrayList<Int>): Unit {
         if (node == null) {
