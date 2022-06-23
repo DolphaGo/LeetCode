@@ -3,9 +3,8 @@ class Solution {
         val builder = StringBuilder()
         var number = columnNumber
         while (number > 0) {
-            var i = (number - 1) % 26
-            builder.append('A' + i)
-            number = (number - i) / 26
+            builder.append('A' + (number - 1) % 26)
+            number = (number - 1) / 26
         }
         return builder.reversed().toString()
     }
