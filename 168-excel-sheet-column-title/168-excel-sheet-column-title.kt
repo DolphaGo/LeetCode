@@ -1,3 +1,12 @@
 class Solution {
-    fun convertToTitle(columnNumber: Int): String = if (columnNumber == 0) "" else convertToTitle((columnNumber - 1) / 26) + ('A' + ((columnNumber - 1) % 26))
+    fun convertToTitle(columnNumber: Int): String {
+        val builder = StringBuilder()
+        var number = columnNumber
+        while (number > 0) {
+            var i = (number - 1) % 26
+            builder.append('A' + i)
+            number = (number - i) / 26
+        }
+        return builder.reversed().toString()
+    }
 }
