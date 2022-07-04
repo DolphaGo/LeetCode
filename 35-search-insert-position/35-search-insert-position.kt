@@ -1,6 +1,11 @@
 class Solution {
     fun searchInsert(nums: IntArray, target: Int): Int {
-        val result = nums.binarySearch(target, 0, nums.size)
-        return if (result < 0) result.times(-1).minus(1) else result
+        var s = 0
+        var e = nums.size
+        while (s < e) {
+            val mid = (s + e).shr(1)
+            if (nums[mid] < target) s = mid + 1 else e = mid
+        }
+        return e
     }
 }
